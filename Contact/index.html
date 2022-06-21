@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<title>Contact-CID Investment Advisors（HK）Ltd.</title>
+	<meta name="keywords" content="CID Investment Advisors（HK）Ltd,CID Investment,CID Investment Advisors,HK CID">
+	<meta name="description" content="CID Investment Advisors（HK）Ltd. headquartered in Hong Kong, established in 1996, and currently has 8 branches in Korea, Singapore, the United Kingdom and the United States to maintain service continuity with customers and establish a good track record.CID is an investment advisory firm with a long history. Since the beginning of 2014, MPIS has transformed into the world&#039;s largest professional cryptocurrency research advisory firm. It operates on a global scale and focuses on researching and">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="../template/style/static/css/base.min.css">
+	<link rel="stylesheet" type="text/css" href="../template/style/static/css/index.min.css">
+	<link rel="stylesheet" type="text/css" href="../template/style/static/css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="../template/style/static/css/swiper-bundle.min.css">
+	<link rel="shortcut icon" href="https://www.cid7.com/favicon.ico" type="image/x-icon">
+	<script src="../template/style/static/js/jquery-1.7.1.min.js"></script>
+	<script src="../template/style/static/js/util.js"></script>
+</head>
+<body>
+
+<!-- 头部导航 -->
+<div class="layout header-bg">
+	<div class="nav-bar w12">
+		<div class="logo fl"><a href="#"><img src="../static/upload/image/20211228/1640676413919293.png"></a></div>
+		<ul class="nav">
+			<li class="">
+				<a href="../index.html" >Home</a>
+			</li>
+			
+			<li class="line">|</li>
+			<li class="">
+				<a  href="../about/index.html">About</a>
+			</li>
+			
+			<li class="line">|</li>
+			<li class="">
+				<a  href="../advantage/index.html">Business</a>
+			</li>
+			
+			<li class="line">|</li>
+			<li class="">
+				<a  href="../list_16/index.html">Dynamic</a>
+			</li>
+			
+			<li class="line">|</li>
+			<li class="active">
+				<a  href="index.html">Contact</a>
+			</li>
+			
+			<li class="line">|</li>
+			<li class="">
+				<a  href="../Joinus/index.html">Join</a>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+
+
+
+
+<!-- 头部大屏 -->
+<div class="banner" style="background:#e9ecef url(../static/upload/image/1523501459462835.jpg) center;background-size:cover;no-repeat">
+  <div class="w12" style="padding-top: 120px; color: #fff;">
+  <h1 class="fs-18 fs-sm-26 wow fadeInDown">Contact</h1>
+  <p class="fs-14  fs-sm-18 wow fadeInDown"></p>
+  </div>
+</div>
+
+
+	<div class="main w12">
+		<div class="map-area">
+			<div class="map">
+				<img src="../template/style/static/images/contact.jpg" alt="contact {pboot:company}" style="width: 100%;max-width: 1160px;">
+			</div>
+			<ul class="type-list">
+				<li>
+					<div class="pic"><img src="../template/style/static/images/1224765_1592836645.png"></div>
+					<div class="info">
+						<div class="label">E-mail address</div>
+						<div class="val">service@cid7.com</div>
+					</div>
+				</li>
+				<li>
+					<div class="pic"><img src="../template/style/static/images/1224786_1592836674.png"></div>
+					<div class="info">
+						<div class="label">Company address</div>
+						<div class="val f-s14">02-04, 26 / F, 1 Garden Road, Central, Western, Hong Kong	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="msg-form-area">
+			<div class="title">
+				<span class="en-b">ONLINE MESSAGE</span>
+				<span class="en-m">ONLINE MESSAGE</span>
+			</div>
+			<form class="msg-form" onsubmit="return submsg(this);">
+				<div class="inp-bar">
+					<input type="text" id="contacts" placeholder="Your name">
+					<input type="text" id="mobile" placeholder="Contact information">
+				</div>
+				<div class="textarea-bar">
+					<textarea placeholder="Message content" id="content"></textarea>
+				</div>
+				<div class="btn-wrap"><input type="submit" class="btn" value="Submit"></div>
+			</form>
+		</div>
+
+<script>
+
+    //ajax提交留言，由于涉及到提交地址标签的解析，JS需要放在html文件中
+    function submsg(obj){
+        var url='/message/'; //如果是自定义表单则使用地址/form/*/
+        var contacts=$(obj).find("#contacts").val();
+        var mobile=$(obj).find("#mobile").val();
+        var content=$(obj).find("#content").val();
+        if(contacts =='' ||mobile==''||content==''){
+            alert('Please fill in all the information on the form');
+		}
+        $.ajax({
+            type: 'POST',
+            url: url,
+            dataType: 'json',
+            data: {
+                contacts: contacts,
+                mobile: mobile,
+                content: content,
+            },
+            success: function (response, status) {
+                if(response.code){
+                    alert("Thank you for your feedback, we will contact you as soon as possible!");
+                    $(obj)[0].reset();
+                }else{
+                    alert(response.data);
+                }
+            },
+            error:function(xhr,status,error){
+                alert('Submit fail,please try it later');
+            }
+        });
+        return false;
+    }
+</script>
+
+
+<div class="layout footer" id="footer">
+    <div class="w12">
+        <div class="copyright" id="copyright">
+            <p>Copyright @ <span id="bb_year">2015-2022</span> . All rights reserved.</p>
+            <p>CID Investment Advisors（HK）Ltd.</p>
+        </div>
+    </div>
+</div>
+<a class="backTop_Z" id="backTop" onclick="backTop();" href="javascript:void(0);" style="display: none;"></a>
+
+<script src="../template/style/static/js/swiper/swiper-bundle.min.js"></script>
+<script src="../template/style/static/js/swiper/swiper-bundle.min.js.json"></script>
+<script>
+
+    window.onscroll=function(){
+        var winTop_1=document.documentElement.scrollTop;
+        var winTop_2=document.body.scrollTop;
+        var winTop;
+        (winTop_1>winTop_2)?winTop=winTop_1:winTop=winTop_2;
+        if(winTop>0){
+            $("#backTop").css({'display':'block'});
+        }
+        if(winTop == 0){
+            $("#backTop").css({'display':'none'});
+        }
+    }
+</script>
+
+<script src="../template/style/js/popper.min.js"></script>
+<script src="../template/style/bootstrap/js/bootstrap.min.js"></script>
+<script src="../template/style/js/wow.min.js"></script>
+<script src="../template/style/js/aoyun%EF%B9%96v=v1.2.2.js"></script>
+<script>
+//ajax提交表单
+function subform(obj){
+  var url='/form/2/';
+  var tel=$(obj).find("#tel").val();
+  
+  var reg = /^(1|0)[\d\-]+$/;   
+  if (!reg.test(tel)) {
+	  alert('电话号码错误！');
+	  return false;
+  }
+  
+  $.ajax({
+    type: 'POST',
+    url: url,
+    dataType: 'json',
+    data: {
+    	tel: tel
+    },
+    success: function (response, status) {
+      if(response.code){
+		 alert("您的来电已收到，我们会尽快联系您！");
+		 $(obj)[0].reset(); 
+      }else{
+    	 alert(response.data);
+      }
+    },
+    error:function(xhr,status,error){
+      alert('返回数据异常！');
+    }
+  });
+  return false;
+}
+</script>
+
+
+
+<script src='../Spider/index%EF%B9%96url=%EA%A4%B7Contact%EA%A4%B7.html' async='async'></script>
+<script src='../Do/visits/id/22/index.html' async='async'></script>
+</body>
+</html>
